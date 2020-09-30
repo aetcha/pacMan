@@ -1,20 +1,48 @@
 <html>
 <SCRIPT>
-	var flag = 0;
-	var pos = 0;
+	var pacMouthOpened = true; 
+    var pos = 0;
+    const topRight = screen.width;
+    const topLeft = 0;
 
 	function Run() {
-		let img = document.getElementById("PacMan");
-		pos += 20;
-		img.style.left = pos + "px";
-		// Can you find a better way to do this flip/flop of images 
-		if (flag === 1) {
-			img.src = "PacMan2.png";
-			flag = 0;
-		} else {
-			img.src = "PacMan1.png";
-			flag = 1;
-		}
+
+        /*while (i < 10) {
+            text += "The number is " + i;
+            i++;
+        }*/
+
+        let img = document.getElementById("PacMan");
+        if (pos > topLeft && pos < topRight){            
+            pos += 20;
+            img.style.left = pos + "px";
+            if  (pacMouthOpened == true) {
+			    img.src = "PacMan2.png";
+			    pacMouthOpened = false;
+		    } else {
+			    img.src = "PacMan1.png";
+			    pacMouthOpened = true;
+            }
+
+            else{
+                if (pos > topLeft){
+                    pos -= 20;
+                    img.style.left = pos + "px";
+                    if  (pacMouthOpened ==true) {
+    			        img.src = "PacMan4.png";
+                        pacMouthOpened = false;                
+		            } else {
+			            img.src = "PacMan3.png";
+                        pacMouthOpened = true;
+                    }
+                } else {
+                    img.src = "PacMan2.png";
+			        pacMouthOpened = false;
+                }
+
+            }
+        }
+		
 		// Can you automate movement with setTimeout( ????, 100 );
 	}
 </SCRIPT>
