@@ -6,7 +6,8 @@
 	function Run() {
 
         let img = document.getElementById("PacMan");
-        if (pos > 0 && pos < screen.width){            
+        if (pos > 0 && pos < screen.width){ 
+            console.log("pos: " + pos + "screen width: " + screen.width)         
             pos += 20;
             img.style.left = pos + "px";
             if  (pacMouthOpened == true) {
