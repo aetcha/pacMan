@@ -23,23 +23,21 @@
 			    img.src = "PacMan1.png";
 			    pacMouthOpened = true;
             }
-
-            else{
-                if (pos > topLeft){
-                    pos -= 20;
-                    img.style.left = pos + "px";
-                    if  (pacMouthOpened ==true) {
-    			        img.src = "PacMan4.png";
-                        pacMouthOpened = false;                
-		            } else {
-			            img.src = "PacMan3.png";
-                        pacMouthOpened = true;
-                    }
-                } else {
-                    img.src = "PacMan2.png";
-			        pacMouthOpened = false;
+        }
+        else {
+            if (pos > topLeft){
+                pos -= 20;
+                img.style.left = pos + "px";
+                if  (pacMouthOpened ==true) {
+    			    img.src = "PacMan4.png";
+                    pacMouthOpened = false;                
+		        } else {
+			        img.src = "PacMan3.png";
+                    pacMouthOpened = true;
                 }
-
+            } else {
+                img.src = "PacMan2.png";
+			    pacMouthOpened = false;
             }
         }
 		
