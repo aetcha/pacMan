@@ -1,14 +1,12 @@
 <html>
 <SCRIPT>
 	var pacMouthOpened = true; 
-    var pos = 1;
-    const topRight = screen.width;
-    const topLeft = 0;
+    var pos = 1;    
 
 	function Run() {
 
         let img = document.getElementById("PacMan");
-        if (pos > topLeft && pos < topRight){            
+        if (pos > 0 && pos < screen.width){            
             pos += 20;
             img.style.left = pos + "px";
             if  (pacMouthOpened == true) {
@@ -20,7 +18,7 @@
             }
         }
         else {
-            if (pos > topLeft){
+            if (pos > 0){
                 pos -= 20;
                 img.style.left = pos + "px";
                 if  (pacMouthOpened ==true) {
